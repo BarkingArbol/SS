@@ -1,0 +1,36 @@
+The goal for me wasn't to finish it as fast as possible, it was to practice basic utilites in Linux and scripting. I'm sure there is a more simple way to process the data.
+
+The purpose of the script was to transform the data in ~/clmystery/mystery/vehicles into a format that is easier to filter through grep.
+This will not solve the scenario, it was simply the way my mind was able to solve how I can get the answer from the file based on the clues I had.
+I tried using the column -t command to make it readable, but it wouldn't allow me to filter through grep properly.
+
+Data existed as the following format:
+
+License Plate L2H5FEJ
+Make: Jeep
+Color: Black
+Owner: Ndeye Heylen
+Height: 5'5"
+Weight: 142 lbs
+
+License Plate A9L8AYR
+Make: Audi
+Color: Yellow
+Owner: Yannick Remarenco
+Height: 5'0"
+Weight: 198 lbs
+
+With 'column -t', it would make it into a table and makes it impossible to search up and down (at least that to my knowledge thus far).
+
+Column 1       Column 2
+-----------------------
+Make:     |     Jeep
+Color:    |    Black
+Owner:    |    Ndeye Heylen
+
+Now, it would look like this and I can grep to my heart's content because grep searches per line.
+License Plate A9L8AYR, Make: Audi, Color: Yellow, Owner: Yannick Remarenco, Height: 5'0", Weight: 198 lbs
+License Plate A9L8AYR, Make: Audi, Color: Yellow, Owner: Yannick Remarenco, Height: 5'0", Weight: 198 lbs
+
+I could've done awk and searched with the format as it was, but I felt it was good practice for the skills I was already in process of developing.
+From here, I manually sorted the list of suspects which narrowed down immensely based on the clues, cross checked against the interviews and made a decision that was correct.
