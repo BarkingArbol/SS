@@ -1,7 +1,8 @@
 #!/bin/bash
 
 # When the line contains "License Plate"
-awk '/License Plate/ {
+awk '/License Plate/ 
+{
     if (NR > 1) print "\n";
     printf "%s", $0;
     next;
@@ -13,6 +14,7 @@ awk '/License Plate/ {
 }
 
 # After processing all records, print a final newline
-END {
+END 
+{
     print "\n";
 }' vehicles > processed_vehicles.txt
